@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/8dbdee40-1598-4f78-8846-75a211f93d34/resourceGroups/OnlineStudy_group/providers/Microsoft.Web/sites/OnlineStudy",
+    "appService.deploySubpath": "."
+}
