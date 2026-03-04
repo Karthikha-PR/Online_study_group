@@ -1,16 +1,18 @@
+const express = require("express");
 const cors = require("cors");
 app.use(cors({
   origin: "*" // allow all origins
 }));
-const express = require("express");
+
 const path = require("path");
 const app = express();
 
-// Serve the React build folder
-app.use(express.static(path.join(__dirname, "build")));
+const buildPath = path.join(__dirname, "build");
+
+app.use(express.static(buildPath));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  res.sendFile(path.join(buildPath, "index.html"));
 });
 
 const port = process.env.PORT || 8080;
