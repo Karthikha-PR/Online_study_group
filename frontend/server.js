@@ -1,14 +1,17 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
+
+// 1. Create the app FIRST
+const app = express(); 
+
+// 2. Use middleware SECOND
 app.use(cors({
-  origin: "*" // allow all origins
+  origin: "*" 
 }));
 
-const path = require("path");
-const app = express();
-
+// 3. Define paths THIRD
 const buildPath = path.join(__dirname, "build");
-
 app.use(express.static(buildPath));
 
 app.get("*", (req, res) => {
